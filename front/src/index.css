@@ -1,0 +1,84 @@
+:root {
+  --primary: #1a73e8;
+  --primary-hover: #1765cc;
+  --bg-sidebar: #202124;
+  --bg-content: #ffffff;
+  --text-main: #3c4043;
+  --text-muted: #5f6368;
+  --border-light: #e0e0e0;
+  --shadow-sm: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+  --header-height: 64px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', 'Inter', -apple-system, sans-serif;
+  background-color: var(--bg-content);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
+/* Layout Utilities */
+.glass-container {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sticky-note {
+  position: relative;
+  padding: 1rem;
+  min-width: 200px;
+  min-height: 100px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.sticky-note::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  background: rgba(217, 48, 37, 0.8); /* Red tape look */
+  opacity: 0.8;
+}
+
+.yellow-note { background: #fee788; }
+.orange-note { background: #ffbe76; }
+
+.compliance-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}

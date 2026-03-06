@@ -1,0 +1,181 @@
+{
+    "sprint_blueprint": {
+        "sprint_id": 2,
+        "system_blueprint": {
+            "persistence_architecture": {
+                "database_engine": "MySQL_8.0+_InnoDB",
+                "entities": [
+                    {
+                        "table_name": "permisologia_tierra",
+                        "execution_order_index": 1,
+                        "depends_on": [
+                            "areas"
+                        ],
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "area_id",
+                                "type": "INT",
+                                "constraints": [
+                                    "FK"
+                                ]
+                            },
+                            {
+                                "name": "document_name",
+                                "type": "VARCHAR(100)",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "number",
+                                "type": "VARCHAR(50)"
+                            },
+                            {
+                                "name": "issue_date",
+                                "type": "DATE"
+                            },
+                            {
+                                "name": "expiry_date",
+                                "type": "DATE"
+                            },
+                            {
+                                "name": "status",
+                                "type": "ENUM('VIGENTE', 'VENCIDO', 'EN_TRAMITE')",
+                                "default": "VIGENTE"
+                            }
+                        ]
+                    },
+                    {
+                        "table_name": "concesiones_acuicultura",
+                        "execution_order_index": 1,
+                        "depends_on": [
+                            "areas"
+                        ],
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "area_id",
+                                "type": "INT",
+                                "constraints": [
+                                    "FK"
+                                ]
+                            },
+                            {
+                                "name": "codigo_centro",
+                                "type": "VARCHAR(20)",
+                                "constraints": [
+                                    "UQ"
+                                ]
+                            },
+                            {
+                                "name": "latitud",
+                                "type": "DECIMAL(10,8)"
+                            },
+                            {
+                                "name": "longitud",
+                                "type": "DECIMAL(11,8)"
+                            },
+                            {
+                                "name": "res_ex_number",
+                                "type": "VARCHAR(50)"
+                            },
+                            {
+                                "name": "expiry_date",
+                                "type": "DATE"
+                            }
+                        ]
+                    },
+                    {
+                        "table_name": "concesiones_maritimas",
+                        "execution_order_index": 1,
+                        "depends_on": [
+                            "areas"
+                        ],
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "area_id",
+                                "type": "INT",
+                                "constraints": [
+                                    "FK"
+                                ]
+                            },
+                            {
+                                "name": "decreto_number",
+                                "type": "VARCHAR(50)"
+                            },
+                            {
+                                "name": "expiry_date",
+                                "type": "DATE"
+                            },
+                            {
+                                "name": "status_tramite",
+                                "type": "VARCHAR(100)"
+                            }
+                        ]
+                    },
+                    {
+                        "table_name": "notificaciones",
+                        "execution_order_index": 2,
+                        "depends_on": [
+                            "users"
+                        ],
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "user_id",
+                                "type": "INT",
+                                "constraints": [
+                                    "FK"
+                                ]
+                            },
+                            {
+                                "name": "message",
+                                "type": "TEXT"
+                            },
+                            {
+                                "name": "read",
+                                "type": "BOOLEAN",
+                                "default": "false"
+                            },
+                            {
+                                "name": "created_at",
+                                "type": "DATETIME",
+                                "default": "NOW()"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

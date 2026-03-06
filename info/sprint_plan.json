@@ -1,0 +1,58 @@
+{
+    "sprint_plan": {
+        "project": "SGI Medio Ambiente",
+        "version": "2.0.0 (PARKO)",
+        "sprints": [
+            {
+                "id": 1,
+                "name": "Sprint 1: Foundation & Core Regulatory",
+                "description": "Setup core database entities, RBAC, and basic regulatory repository.",
+                "user_stories": [
+                    "US-001",
+                    "US-002",
+                    "US-003",
+                    "US-101",
+                    "US-103"
+                ],
+                "status": "completed"
+            },
+            {
+                "id": 2,
+                "name": "Sprint 2: Permisología & Concesiones",
+                "description": "Complete module for Tierra, CCAA and CCMM.",
+                "user_stories": [
+                    "US-201",
+                    "US-202",
+                    "US-203",
+                    "US-102"
+                ],
+                "status": "planned"
+            },
+            {
+                "id": 3,
+                "name": "Sprint 3: INFAS & Procedimientos",
+                "description": "Register INFAS and internal procedures repository.",
+                "user_stories": [
+                    "US-301",
+                    "US-302",
+                    "US-303",
+                    "US-401",
+                    "US-402"
+                ],
+                "status": "backlog"
+            },
+            {
+                "id": 4,
+                "name": "Sprint 4: Auditorías & Reportes",
+                "description": "Audits, Hallazgos, and SINADER/SIDREP reports.",
+                "user_stories": [
+                    "US-403",
+                    "US-501",
+                    "US-502",
+                    "US-503"
+                ],
+                "status": "backlog"
+            }
+        ]
+    }
+}

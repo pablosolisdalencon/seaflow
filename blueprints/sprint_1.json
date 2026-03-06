@@ -1,0 +1,169 @@
+{
+    "sprint_blueprint": {
+        "sprint_id": 1,
+        "system_blueprint": {
+            "persistence_architecture": {
+                "database_engine": "MySQL_8.0+_InnoDB",
+                "entities": [
+                    {
+                        "table_name": "roles",
+                        "execution_order_index": 0,
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "name",
+                                "type": "VARCHAR(50)",
+                                "constraints": [
+                                    "NN",
+                                    "UQ"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "table_name": "users",
+                        "execution_order_index": 1,
+                        "depends_on": [
+                            "roles"
+                        ],
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "name",
+                                "type": "VARCHAR(100)",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "email",
+                                "type": "VARCHAR(150)",
+                                "constraints": [
+                                    "NN",
+                                    "UQ"
+                                ]
+                            },
+                            {
+                                "name": "password_hash",
+                                "type": "VARCHAR(255)",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "role_id",
+                                "type": "INT",
+                                "constraints": [
+                                    "FK"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "table_name": "areas",
+                        "execution_order_index": 0,
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "name",
+                                "type": "VARCHAR(50)",
+                                "constraints": [
+                                    "NN",
+                                    "UQ"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "table_name": "normativas",
+                        "execution_order_index": 0,
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "name",
+                                "type": "TEXT",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "short_name",
+                                "type": "VARCHAR(100)",
+                                "constraints": [
+                                    "UQ"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "table_name": "articulos",
+                        "execution_order_index": 1,
+                        "depends_on": [
+                            "normativas"
+                        ],
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "normativa_id",
+                                "type": "INT",
+                                "constraints": [
+                                    "FK"
+                                ]
+                            },
+                            {
+                                "name": "number",
+                                "type": "VARCHAR(20)",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "description",
+                                "type": "TEXT",
+                                "constraints": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "security_hardening": {
+                "auth_policy": "JWT_RS256"
+            }
+        }
+    }
+}

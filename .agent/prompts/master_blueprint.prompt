@@ -1,0 +1,102 @@
+# BLUEPRINT: SGI Medio Ambiente - FULL SYSTEM - PARKO EDITION
+# Compliance: IEEE 12207:2017 / IEEE 29148 / IEEE 1016 / IEEE 7000
+# Project UUID: sgi-ma-full-2026-03-06
+# BD Engine: MySQL 8.0+ (InnoDB)
+# Security: JWT RS256 / AES-256-GCM / RBAC Granular
+
+{
+  "system_blueprint": {
+    "compliance": "IEEE 29148 / IEEE 1016",
+    "metadata": {
+      "project_name": "SGI Medio Ambiente (Seaflow)",
+      "version": "1.0.0",
+      "criticality": "Nivel A - Crítico para Operaciones y Cumplimiento Legal",
+      "stakeholders": [
+        {"role": "Administrador", "responsibility": "Control total, gestión de usuarios y normativa"},
+        {"role": "Usuario Interno", "responsibility": "Carga de evidencias, reportes y seguimiento"},
+        {"role": "Usuario Básico", "responsibility": "Auditoría visual y consulta"}
+      ]
+    },
+    "requirements_catalog": [
+      {"id": "REQ-GEN-01", "type": "Functional", "statement": "Gestión de Multi-áreas: Caucahue, Chequian y Pullao.", "priority": "1"},
+      {"id": "REQ-NORM-01", "type": "Functional", "statement": "Repositorio normativo con desglose por artículos y evidencias específicas.", "priority": "1"},
+      {"id": "REQ-NORM-02", "type": "Functional", "statement": "Semáforo visual de cumplimiento (Rojo/Amarillo/Verde) según plazos.", "priority": "1"},
+      {"id": "REQ-CERT-01", "type": "Functional", "statement": "Gestión de certificaciones (BAP, ASC, APL) con carga de evidencia por ítem.", "priority": "1"},
+      {"id": "REQ-PERM-01", "type": "Functional", "statement": "Control de Permisología: Tierra, Concesiones Acuicultura (CCAA) y Marítimas (CCMM).", "priority": "1"},
+      {"id": "REQ-INFA-01", "type": "Functional", "statement": "Registro de Informes INFAS con parámetros físico-químicos (pH, Redox, MO).", "priority": "2"},
+      {"id": "REQ-PROC-01", "type": "Functional", "statement": "Gestión de Procedimientos internos (Instructivos IN, Programas PR) con versionamiento.", "priority": "2"},
+      {"id": "REQ-REPT-01", "type": "Functional", "statement": "Generación de reportes SINADER, SIDREP y limpieza de playas.", "priority": "1"},
+      {"id": "REQ-LOGS-01", "type": "Functional", "statement": "Bitácora de actividad y auditoría de acciones de usuario.", "priority": "1"},
+      {"id": "REQ-SEC-01", "type": "Security", "statement": "Autenticación JWT RS256 y cifrado de PII.", "priority": "1"}
+    ],
+    "agile_layer": {
+      "user_stories": [
+        {
+          "id": "US-NORM-01",
+          "role": "Administrador",
+          "action": "Recibir notificación por cambios en normativas",
+          "acceptance_criteria": ["Email enviado al administrador", "Registro en bitácora de actualización"]
+        },
+        {
+          "id": "US-CERT-01",
+          "role": "Usuario Interno",
+          "action": "Cargar evidencia para certificación BAP",
+          "acceptance_criteria": ["Carga de PDF/IMG exitosa", "Actualización automática de % de cumplimiento"]
+        },
+        {
+          "id": "US-DASH-01",
+          "role": "Usuario Interno",
+          "action": "Ver dashboard con próximos vencimientos",
+          "acceptance_criteria": ["Calendario interactivo", "Lista de tareas priorizadas por color"]
+        },
+        {
+          "id": "US-PERM-01",
+          "role": "Administrador",
+          "action": "Gestionar vigencia de concesiones marítimas",
+          "acceptance_criteria": ["Alertas 3 meses antes del vencimiento", "Historial de trámites visible"]
+        },
+        {
+          "id": "US-INFA-01",
+          "role": "Usuario Interno",
+          "action": "Ingresar resultados de INFA por centro",
+          "acceptance_criteria": ["Validación de rangos químicos", "Estado Aeróbica/Anaeróbica calculado"]
+        }
+      ]
+    },
+    "persistence_architecture": {
+      "database_engine": "MySQL_8.0+_InnoDB",
+      "entities": [
+        {"table_name": "roles", "execution_order_index": 0, "schema": [{"name": "id", "type": "INT", "constraints": ["PK", "AI"]}, {"name": "name", "type": "VARCHAR(50)", "constraints": ["NN", "UQ"]}]},
+        {"table_name": "users", "execution_order_index": 1, "depends_on": ["roles"], "schema": [{"name": "id", "type": "INT", "constraints": ["PK", "AI"]}, {"name": "name", "type": "VARCHAR(100)"}, {"name": "email", "type": "VARCHAR(150)", "constraints": ["UQ"]}, {"name": "password_hash", "type": "VARCHAR(255)"}, {"name": "role_id", "type": "INT", "constraints": ["FK"]}]},
+        {"table_name": "areas", "execution_order_index": 0, "schema": [{"name": "id", "type": "INT", "constraints": ["PK", "AI"]}, {"name": "name", "type": "VARCHAR(50)"}]},
+        {"table_name": "normativas", "execution_order_index": 0, "schema": [{"name": "id", "type": "INT", "constraints": ["PK", "AI"]}, {"name": "name", "type": "TEXT"}, {"name": "short_name", "type": "VARCHAR(100)"}, {"name": "entity", "type": "VARCHAR(100)"}, {"name": "thematic", "type": "VARCHAR(100)"}]},
+        {"table_name": "articulos", "execution_order_index": 1, "depends_on": ["normativas"], "schema": [{"name": "id", "type": "INT", "constraints": ["PK", "AI"]}, {"name": "normativa_id", "type": "INT", "constraints": ["FK"]}, {"name": "number", "type": "VARCHAR(20)"}, {"name": "description", "type": "TEXT"}]},
+        {"table_name": "cumplimientos_normativos", "execution_order_index": 2, "depends_on": ["articulos", "areas"], "schema": [{"name": "id", "type": "INT", "constraints": ["PK", "AI"]}, {"name": "articulo_id", "type": "INT", "constraints": ["FK"]}, {"name": "area_id", "type": "INT", "constraints": ["FK"]}, {"name": "status", "type": "ENUM('VERDE', 'AMARILLO', 'ROJO')"}, {"name": "due_date", "type": "DATE"}, {"name": "evidence_url", "type": "VARCHAR(255)"}]},
+        {"table_name": "certificaciones", "execution_order_index": 0, "schema": [{"name": "id", "type": "INT", "constraints": ["PK", "AI"]}, {"name": "name", "type": "VARCHAR(100)"}, {"name": "type", "type": "ENUM('BAP', 'ASC', 'ORGANICO', 'APL')"}], "data": [{"name": "BAP", "type": "BAP"}, {"name": "ASC", "type": "ASC"}]},
+        {"table_name": "certificacion_items", "execution_order_index": 1, "depends_on": ["certificaciones"], "schema": [{"name": "id", "type": "INT", "constraints": ["PK", "AI"]}, {"name": "certificacion_id", "type": "INT", "constraints": ["FK"]}, {"name": "clause", "type": "VARCHAR(20)"}, {"name": "description", "type": "TEXT"}]},
+        {"table_name": "permisologia_tierra", "execution_order_index": 1, "depends_on": ["areas"], "schema": [{"name": "id", "type": "INT", "constraints": ["PK", "AI"]}, {"name": "area_id", "type": "INT", "constraints": ["FK"]}, {"name": "document_name", "type": "VARCHAR(100)"}, {"name": "number", "type": "VARCHAR(50)"}, {"name": "issue_date", "type": "DATE"}, {"name": "expiry_date", "type": "DATE"}]},
+        {"table_name": "infas", "execution_order_index": 1, "depends_on": ["areas"], "schema": [{"name": "id", "type": "INT", "constraints": ["PK", "AI"]}, {"name": "area_id", "type": "INT", "constraints": ["FK"]}, {"name": "report_date", "type": "DATE"}, {"name": "ph", "type": "DECIMAL(5,2)"}, {"name": "redox", "type": "DECIMAL(5,2)"}, {"name": "mo", "type": "DECIMAL(5,2)"}, {"name": "status", "type": "ENUM('AEROBICA', 'ANAEROBICA')"}]},
+        {"table_name": "procedimientos", "execution_order_index": 0, "schema": [{"name": "id", "type": "INT", "constraints": ["PK", "AI"]}, {"name": "code", "type": "VARCHAR(50)", "constraints": ["UQ"]}, {"name": "name", "type": "VARCHAR(255)"}, {"name": "version", "type": "VARCHAR(10)"}, {"name": "last_update", "type": "DATE"}]},
+        {"table_name": "bitacora_actualizacion", "execution_order_index": 1, "depends_on": ["users"], "schema": [{"name": "id", "type": "INT", "constraints": ["PK", "AI"]}, {"name": "user_id", "type": "INT", "constraints": ["FK"]}, {"name": "action", "type": "VARCHAR(255)"}, {"name": "target_entity", "type": "VARCHAR(100)"}, {"name": "timestamp", "type": "DATETIME", "default": "NOW()"}]}
+      ]
+    },
+    "security_hardening": {
+      "auth_policy": "JWT_RS256",
+      "encryption_targets": ["users.password_hash", "users.email"],
+      "pii_compliance": "LGPD/GDPR"
+    }
+  }
+}
+
+## III. VISTA DE INTEGRACIÓN
+1. `GET /api/dashboard/vencimientos`: Sumario de plazos por área.
+2. `POST /api/certificaciones/evidencia`: Subida de archivos asociada a cláusulas.
+3. `PUT /api/permisologia/tierra/:id`: Actualización de vigencias.
+4. `GET /api/infas/reporte/:area_id`: Gráficos de tendencias pH/Redox/MO.
+
+## IV. MATRIZ DE TRAZABILIDAD
+| US-ID | REQ-ID | Validacion |
+|-------|--------|------------|
+| US-NORM-01 | REQ-LOGS-01 | El log registra el cambio normativo |
+| US-CERT-01 | REQ-CERT-01 | El % de cumplimiento sube tras la carga |
+| US-INFA-01 | REQ-INFA-01 | Status cambia a ANAEROBICA si Redox < -100mV |

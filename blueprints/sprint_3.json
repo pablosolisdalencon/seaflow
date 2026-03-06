@@ -1,0 +1,136 @@
+{
+    "sprint_blueprint": {
+        "sprint_id": 3,
+        "system_blueprint": {
+            "persistence_architecture": {
+                "database_engine": "MySQL_8.0+_InnoDB",
+                "entities": [
+                    {
+                        "table_name": "infas",
+                        "execution_order_index": 1,
+                        "depends_on": [
+                            "areas"
+                        ],
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "area_id",
+                                "type": "INT",
+                                "constraints": [
+                                    "FK"
+                                ]
+                            },
+                            {
+                                "name": "report_date",
+                                "type": "DATE",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "ph",
+                                "type": "DECIMAL(5,2)"
+                            },
+                            {
+                                "name": "redox",
+                                "type": "DECIMAL(5,2)"
+                            },
+                            {
+                                "name": "mo",
+                                "type": "DECIMAL(5,2)"
+                            },
+                            {
+                                "name": "status",
+                                "type": "ENUM('AEROBICA', 'ANAEROBICA')"
+                            }
+                        ]
+                    },
+                    {
+                        "table_name": "procedimientos",
+                        "execution_order_index": 0,
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "code",
+                                "type": "VARCHAR(50)",
+                                "constraints": [
+                                    "UQ",
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "name",
+                                "type": "VARCHAR(255)",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "version",
+                                "type": "VARCHAR(10)"
+                            },
+                            {
+                                "name": "last_update",
+                                "type": "DATE"
+                            }
+                        ]
+                    },
+                    {
+                        "table_name": "bitacora_actualizacion",
+                        "execution_order_index": 1,
+                        "depends_on": [
+                            "users"
+                        ],
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "user_id",
+                                "type": "INT",
+                                "constraints": [
+                                    "FK"
+                                ]
+                            },
+                            {
+                                "name": "action",
+                                "type": "VARCHAR(255)",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "target_entity",
+                                "type": "VARCHAR(100)"
+                            },
+                            {
+                                "name": "timestamp",
+                                "type": "DATETIME",
+                                "default": "NOW()"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

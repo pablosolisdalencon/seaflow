@@ -1,0 +1,182 @@
+{
+    "sprint_blueprint": {
+        "sprint_id": 4,
+        "system_blueprint": {
+            "persistence_architecture": {
+                "database_engine": "MySQL_8.0+_InnoDB",
+                "entities": [
+                    {
+                        "table_name": "auditorias",
+                        "execution_order_index": 1,
+                        "depends_on": [
+                            "areas"
+                        ],
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "area_id",
+                                "type": "INT",
+                                "constraints": [
+                                    "FK"
+                                ]
+                            },
+                            {
+                                "name": "type",
+                                "type": "ENUM('INTERNA', 'EXTERNA')",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "date",
+                                "type": "DATE",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "auditor_name",
+                                "type": "VARCHAR(100)"
+                            },
+                            {
+                                "name": "status",
+                                "type": "ENUM('PLANIFACO', 'EN_CURSO', 'FINALIZADO')",
+                                "default": "PLANIFACO"
+                            }
+                        ]
+                    },
+                    {
+                        "table_name": "hallazgos",
+                        "execution_order_index": 2,
+                        "depends_on": [
+                            "auditorias"
+                        ],
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "auditoria_id",
+                                "type": "INT",
+                                "constraints": [
+                                    "FK"
+                                ]
+                            },
+                            {
+                                "name": "description",
+                                "type": "TEXT",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "severity",
+                                "type": "ENUM('CRITICA', 'MAYOR', 'MENOR', 'OBSERVACION')"
+                            },
+                            {
+                                "name": "status",
+                                "type": "ENUM('ABIERTO', 'EN_PROCESO', 'CERRADO')",
+                                "default": "ABIERTO"
+                            }
+                        ]
+                    },
+                    {
+                        "table_name": "compromisos",
+                        "execution_order_index": 3,
+                        "depends_on": [
+                            "hallazgos"
+                        ],
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "hallazgo_id",
+                                "type": "INT",
+                                "constraints": [
+                                    "FK"
+                                ]
+                            },
+                            {
+                                "name": "action_plan",
+                                "type": "TEXT",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "due_date",
+                                "type": "DATE"
+                            },
+                            {
+                                "name": "status",
+                                "type": "ENUM('PENDIENTE', 'CUMPLIDO', 'ATRASADO')",
+                                "default": "PENDIENTE"
+                            }
+                        ]
+                    },
+                    {
+                        "table_name": "reportes_externos",
+                        "execution_order_index": 1,
+                        "depends_on": [
+                            "areas"
+                        ],
+                        "schema": [
+                            {
+                                "name": "id",
+                                "type": "INT",
+                                "constraints": [
+                                    "PK",
+                                    "AI"
+                                ]
+                            },
+                            {
+                                "name": "area_id",
+                                "type": "INT",
+                                "constraints": [
+                                    "FK"
+                                ]
+                            },
+                            {
+                                "name": "system",
+                                "type": "ENUM('SINADER', 'SIDREP', 'LIMPIEZA_PLAYAS')",
+                                "constraints": [
+                                    "NN"
+                                ]
+                            },
+                            {
+                                "name": "period",
+                                "type": "VARCHAR(20)"
+                            },
+                            {
+                                "name": "submission_date",
+                                "type": "DATE"
+                            },
+                            {
+                                "name": "status",
+                                "type": "ENUM('PENDIENTE', 'ENVIADO')"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

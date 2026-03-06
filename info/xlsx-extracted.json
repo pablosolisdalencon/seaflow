@@ -1,0 +1,2599 @@
+{
+  "Req": [
+    [
+      "1. Usuarios y roles",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Rol",
+      "Funciones",
+      "",
+      "",
+      "Permisos",
+      "Personas para el rol"
+    ],
+    [
+      "",
+      "Administrador ",
+      "Responsable de controlar el cumplimiento normativo de CCS",
+      "",
+      "",
+      "Todos los permisos",
+      "- Encargado de MA\r\n- Jefe de cultivos"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Usuario interno",
+      "Responsable de dar cumplimiento a los distintos cuerpos normativos que le apliquen, además de completar las evidencias necesarias para validar el cumplimiento.",
+      "",
+      "",
+      "Carga de datos (evidencias)\r\nModificación de registros",
+      "- Jefes de área\r\n- Jefes de centro\r\n- Asistente administrativo"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Usuario básico",
+      "Verificar información de cada área y temática",
+      "",
+      "",
+      "Solo visualización ",
+      "- Auditor externo y/o interno"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "2. Requerimientos funcionales",
+      "",
+      "(relacionados con las funcionalidades del software)",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. Es necesario contar con un repositorio donde se almacene la normativa, los artículos que aplican a CCS y las evidencias necesarias para dar cumplimiento (tabla 2 procedimiento)",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "b. Se requiere que en caso de modificación de cualquier cuerpo normativo el administrador sea notificado vía correo electrónico detallando las modificaciones, proyectos que estén siendo tramitados y que representen un posible impacto, etc.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "c. Es necesario contar con notificaciones/alertas para que los usuarios estén al tanto del plazo que tienen para dar cumplimiento a cada cuerpo normativo correspondiente. Además, se puede considerar una alerta visual, dónde esté en rojo si el plazó ya caducó, amarillo si está pronto a caducar o verde si aún tiene un plazo amplio.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "d. Generar reportes (limpieza de playas, residuos, auditoría interna, reportes de cierre (subsanar))",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "e. Sistema de alerta al encargado de MA/JC cuando los usuarios realicen carga de datos, evidencias, cumplimientos, etc.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "3. Requerimientos no funcionales",
+      "",
+      "(relacionados a requisitos de rendimiento, seguridad, usabilidad, etc. )",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. Debe cumplir con normativas de seguridad y privacidad de datos.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "b. Dar la posibilidad a los usuarios de cargar datos, para así poder anexar la evidencia del cumplimiento correspondiente",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "c. Considerar diseño responsivo, para así poder ingresar, cargar datos, etc., desde cualquier dispositivo (celular, tablet, etc.)",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "4. Flujo de la información",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Normativa",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Para llevar un control de los cumplimientos existen dos formas de poder cargar la evidencia al sistema:",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. Carga de archivo:",
+      "solo es necesario adjuntar un archivo para evidenciar el cumplimiento",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "b. Formulario: ",
+      "formulario con los campos necesarios para cargar información y que vaya generando una especie de planilla con todos los registros",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Certificaciones",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Para llevar un control de los cumplimientos:",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. Carga de archivo:",
+      "solo es necesario adjuntar un archivo para evidenciar el cumplimiento. Esto se debe hacer por cada punto que haya que cumplir para obtener la cada certificación",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "Requerimientos": [
+    [
+      "1. Usuarios y roles",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Gestión de usuarios",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. El sistema debe permitir la creación, edición y eliminación de usuarios, además de gestionar roles y permisos",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Rol",
+      "Funciones",
+      "",
+      "",
+      "Permisos",
+      "Personas para el rol"
+    ],
+    [
+      "",
+      "Administrador ",
+      "- Controlar/supervisar el cumplimiento normativo de CCS\r\n- Gestionar todos los demás usuarios y sus permisos.",
+      "",
+      "",
+      "- Acceso completo a todas las funciones del sistema.\r\n- Crear, editar y eliminar usuarios y roles.",
+      "- Encargado de MA\r\n- Jefe de cultivos"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Usuario interno",
+      "Responsable de dar cumplimiento a los distintos cuerpos normativos que le apliquen, además de completar las evidencias necesarias para validar el cumplimiento.",
+      "",
+      "",
+      "- Carga de datos (evidencias)\r\n- Modificación de registros",
+      "- Jefes de área\r\n- Jefes de centro\r\n- Asistente administrativo\r\n- Encargado de semilla\r\n- Secretaria de Gerencia\r\n- Control prod/mant\r\n- RRHH\r\n- Prev. De riesgos "
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Usuario básico",
+      "Verificar información de cada área y temática",
+      "",
+      "",
+      "Solo visualización ",
+      "- Auditor externo y/o interno"
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "2. Requerimientos funcionales",
+      "",
+      "Describen lo que el sistema debe hacer, las funciones y servicios que debe proporcionar",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Gestión de normativa",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. Es necesario contar con un repositorio donde se almacene la normativa, los artículos que aplican a CCS y las evidencias necesarias para dar cumplimiento (tabla 2 procedimiento)",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "b. Se requiere que en caso de modificación de cualquier cuerpo normativo el administrador sea notificado vía correo electrónico detallando las modificaciones, proyectos que estén siendo tramitados y que representen un posible impacto, etc.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Gestión de certificaciones",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. El sistema debe permitir registrar y actualizar las certificaciones obtenidas",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "b. El sistema debe enviar recordatorios para la renovación de certificaciones.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "c. El sistema debe generar informes de cumplimiento de las certificaciones.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Seguimiento de cumplimiento",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. Es necesario contar con notificaciones/alertas para que los usuarios estén al tanto del plazo que tienen para dar cumplimiento a cada cuerpo normativo correspondiente. Además, se puede considerar una alerta visual, dónde esté en rojo si el plazó ya caducó, amarillo si está pronto a caducar o verde si aún tiene un plazo amplio.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Generación de informes",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. El sistema debe generar informes detallados sobre el cumplimiento dee normativas y certificaciones, en formato PDF y Excel (limpieza de playas, residuos, auditoría interna, reportes de cierre (subsanar))",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Auditorías y seguimiento",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. El sistema debe registrar todas las acciones realizadas por los usuarios para fines de auditoría, permitiendo la búsqueda y revisión de registros de actividades y acciones.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "b. Sistema de alerta al encargado de MA/JC cuando los usuarios realicen carga de datos, evidencias, cumplimientos, etc.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Integración con sistemas externos",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. El sistema debe poder integrarse con bases de datos y sistemas externos relevantes para obtener información actualizada de normativas y certificaciones.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "3. Requerimientos no funcionales",
+      "",
+      "Describen cómo debe comportarse el sistema, sus cualidades y restricciones. ",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Escalabilidad",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. El sistema debe ser escalable para manejar la cantidad de datos y usuarios.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Seguridad",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. El sistema debe cumplir con las mejores prácticas de seguridad para proteger la información sensible y cumplir con las normativas de protección de datos.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Usabilidad",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. El sistema debe ser intuitivo y fácil de usar para los usuarios con distintos niveles de habilidad técnica.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "b. El sistema debe proporcionar documentación y ayuda en línea para facilitar su uso.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "c. El sistema debe proporcionar retroalimentación inmediata a las acciones del usuario, como confirmaciones de acciones exitosas, errores y estados de proceso.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Compatibilidad ",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. El sistema debe ser compatible con los principales navegadores web y dispositivos móviles.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "b. Considerar diseño responsivo, para así poder ingresar, cargar datos, etc., desde cualquier dispositivo (celular, tablet, etc.)",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "c. Dar la posibilidad a los usuarios de cargar datos, para así poder anexar la evidencia del cumplimiento correspondiente",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Respaldo y recuperación",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. El sistema debe incluir mecanismos para el respaldo periódico de datos, perimitiendo la recuperación de datos en caso de fallos o pérdidas de datos.",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "4. Flujo de la información",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Normativa",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Para llevar un control de los cumplimientos se identifican dos formas de poder cargar la evidencia al sistema:",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. Carga de archivo:",
+      "solo es necesario adjuntar un archivo para evidenciar el cumplimiento",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "b. Formulario: ",
+      "formulario con los campos necesarios para cargar información y que vaya generando una especie de planilla con todos los registros",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Certificaciones",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "Para llevar un control de los cumplimientos:",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "a. Carga de archivo:",
+      "solo es necesario adjuntar un archivo para evidenciar el cumplimiento. Esto se debe hacer por cada punto que haya que cumplir para obtener la cada certificación",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "INFORMACIÓN FALTANTE",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "RCA y matriz de cumplimiento",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "Flujo": [
+    [
+      "Responsable",
+      "Evidencia",
+      " Plazo",
+      "Flujo Info",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Jefaturas de Área",
+      "Envió del comprobante de Pago de la patente Municipal",
+      "Semestral",
+      "Carga de archivo",
+      "",
+      "Carga de archivo:",
+      "",
+      "solo es necesario cargar un documento",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Departamento de Personas",
+      "Envió del Listado de pago de sueldos dignos",
+      "Mensual",
+      "Carga de archivo",
+      "",
+      "Formulario:",
+      "",
+      "formulario con los campos necesarios para cargar información y que vaya generando una especie de planilla con todos los registros",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Departamento de Personas",
+      "Envió del Detalle del personal (ej: cantidad de hombres y mujeres), APL",
+      "Mensual",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Control producción",
+      "Envió del detalle de Siembras (ton), APL",
+      "Mensual",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "Los documentos que se están archivando en Drive, seguirá así o comenzarán a quedar en el software (?)",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Control producción",
+      "Envió del detalle de Cosechas (ton), APL",
+      "Mensual",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Registro de información en la planilla APL",
+      "Mensual",
+      "Formulario ",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Asistente administrativo",
+      "Envió de Guía por despacho de reciclaje",
+      "Por retiro",
+      "Carga de archivo",
+      "*",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Archivar en RCA Cultivos guías de reciclaje",
+      "Por retiro",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Asistente administrativo",
+      "Envió de Guía por despacho de residuos no peligrosos",
+      "Por retiro",
+      "Carga de archivo",
+      "*",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Archivar en RCA Cultivos guías de residuos no peligrosos",
+      "Por retiro",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Asistente administrativo",
+      "Envío de Guía por despacho de RESPEL",
+      "Por retiro",
+      "Carga de archivo",
+      "*",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Archivar en RCA Cultivos guías de RESPEL",
+      "Por retiro",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Asistente administrativo",
+      "Envió de Guía por despacho de baños químicos",
+      "Por retiro",
+      "Carga de archivo",
+      "*",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Archivar en RCA Cultivos guías de baños",
+      "Por retiro",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Asistente administrativo",
+      "Envió de Consumos energéticos de la base",
+      "07 de c/mes",
+      "Formulario ",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Administración y finanzas",
+      "Envió de Consumos energéticos Camionetas",
+      "07 de c/mes",
+      "Formulario ",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Asistente administrativo",
+      "Registrar en Planilla de registro medición de cloro, agua potable",
+      "diaria",
+      "Formulario ",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Asistente administrativo",
+      "Envió de copia de Registro de las Bitácoras de fiscalización",
+      "Cada fiscalización",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Asistente administrativo",
+      "Envió de Planilla de inocuidad en cosecha",
+      "Con observación",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Declaración SINADER, reporte de residuos no peligrosos",
+      "12 de c/mes",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Declaración SINADER histórico",
+      "30 de marzo Anual",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Empresa Externa",
+      "Declaración SIDREP",
+      "Cada 6 meses",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Obtención de certificado de Disposición Final de residuos no peligrosos",
+      "Mensual",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Obtención de certificado de Disposición Final y adición de químico, baños ",
+      "Mensual",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Obtención de certificado de Reciclaje",
+      "Cuando se realice",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Actualización de la Planilla de registro de residuos",
+      "Mensual",
+      "Formulario ",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Actualización de la Planilla de registro de RESPEL",
+      "Cada 6 meses",
+      "Formulario ",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Asistente administrativo",
+      "Envió de Registro de limpieza de Playas",
+      "Mensual, Todas las CCAA",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Capacitaciones ",
+      "Semestral",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Auditorias Medio Ambiente",
+      "Semestral",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Declaración DAE Desempeño Ambiental Empresarial",
+      "30 Junio c/año",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Declaración Jurada",
+      "Octubre c/año",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Declaración Balance Nacional de Energía",
+      "08 de mayo de c/año",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Declaración SMA, Limpiezas de Playas",
+      "Todas las CCAA",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Auditorias internas de Certificaciones, documental",
+      "Semestral",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Auditorias internas de Certificaciones, en terreno",
+      "Semestral",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Solicitud de Certificados Transaccionales a  OIA",
+      "08 de c/mes (anterior)",
+      "Carga de archivo",
+      "*",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Mantener actualizada la normativa en la Matriz de normativa de Medio Ambiente",
+      "Semestral",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Encargado Normativa",
+      "Control del Pago de la patente de acuicultura",
+      "Anual, diciembre",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Asistente administrativo",
+      "Archivar las guías de cosecha orgánica en RCA Cultivos",
+      "Por día de cosecha",
+      "Carga de archivo",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "BAP": [
+    [
+      "Estructura de la normativa que rige la certificación BAP",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Comunidad",
+      "",
+      "Aplica",
+      "Cumplimos",
+      "Como cumplimos y dudas"
+    ],
+    [
+      "1. Derechos de propiedad y cumplimiento normativo",
+      "1.1: Se deberá disponer de documentos vigentes que acrediten el uso legal de la tierra, el fondo marino y/o el agua, cuando corresponda.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "1.2: Los documentos vigentes deberán estar disponibles para demostrar que se han adquirido todas las licencias comerciales y de operación.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "1.3: Se deberá disponer de documentos vigentes que acrediten el cumplimiento de la normativa ambiental aplicable a la construcción y funcionamiento.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "1.4: Cuando corresponda, los documentos actuales deberán estar disponibles para demostrar el cumplimiento de las leyes que protegen los recursos de pueblos indígenas y/o acuerdos independientes que el solicitante haya celebrado con ellos.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "1.5: Cuando corresponda, los documentos actuales deberán estar disponibles para demostrar el cumplimiento de las normas regionales propias del sitio de cultivo códigos de prácticas de la industria, si existen. ",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "2. Relaciones comunitarias",
+      "2.1: El solicitante deberá demostrar que la instalación de acuicultura no impide el acceso legal a las zonas de pesca tradicionales y otros recursos públicos establecidos, salvo lo permitido por la ley.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "2.2: El solicitante deberá identificar claramente todos los límites de las instalaciones de acuicultura terrestres y colocar carteles que adviertan al público y al personal sobre posibles riesgos de seguridad, cuando corresponda.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "2.3: El solicitante deberá demostrar interacción y comunicación con la comunidad local en respuesta a los problemas que surjan.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "2.4: El solicitante deberá demostrar un proceso, que incluye, entre otros, políticas escritas, para evitar o resolver conflictos, por ejemplo a través de reuniones, comités, correspondencia, proyectos de servicio u otras actividades. El solicitante deberá registrar todos los conflictos, las medidas tomadas para resolverlos y los resultados",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "2.5 : Cuando corresponda, el solicitante deberá demostrar diálogo con los pueblos indígenas locales y políticas y procedimientos escritos para la resolución de conflictos con ellos bajo las leyes que regulan sus derechos. El solicitante deberá registrar todo conflictos, medidas adoptadas para resolverlos y los resultados.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "2.6 : En lugares residenciales, el solicitante deberá demuestran que el ruido, tanto en el lugar como en los vehículos entrar y salir de las instalaciones, y la iluminación nocturna se ha minimizado en la mayor medida posible.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "3. Seguridad laboral y relaciones laborales",
+      "3.1: El solicitante deberá cumplir o exceder el salario mínimo y los beneficios requeridos por las leyes laborales locales y nacionales.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.2: El solicitante deberá cumplir con las leyes nacionales sobre trabajo infantil con respecto a la edad mínima para trabajar o el Convenio sobre la edad mínima de la OIT 138, el que sea mayor. El Convenio 138 de la OIT sobre edad mínima establece que la edad mínima será 15 años, a menos que la ley local en los países en desarrollo se establezca en 14 años, de acuerdo con las excepciones de los países en desarrollo bajo este convenio.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.3: El empleo de trabajadores jóvenes por encima de la edad mínima pero menores de 18 años deberá cumplir con las leyes locales, incluido el acceso requerido a la asistencia escolar obligatoria y cualquier restricción de horas y horas del día.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.4: Los trabajadores jóvenes mayores de la edad mínima pero menores de 18 años no deberán ser sometidos a trabajos peligrosos que puedan comprometer su salud y seguridad.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.5: Todo trabajo, incluidas las horas extras, debe ser voluntario. La instalación no realizará ningún tipo de trabajo forzoso o en condiciones de servidumbre. Esto incluye la trata de personas, la posesión de documentos de identidad originales, la prohibición de que los trabajadores abandonen las instalaciones después de su turno u otras coacciones destinadas a obligar a alguien a trabajar. Cuando la legislación nacional exija la posesión de documentos de identidad originales, dichos documentos deben devolverse inmediatamente a los empleados que lo soliciten y estar disponibles para ellos en todo momento.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.6: El solicitante deberá cumplir con la semana laboral nacional obligatoria, cuando corresponda.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.7: El solicitante deberá cumplir con las leyes laborales nacionales en materia de pago, horas extras y compensación de vacaciones por las horas trabajadas más allá de el día o semana laboral habitual.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.8: La instalación no requerirá el pago de depósitos, deducciones de salarios o retención de salario que no sea parte de un acuerdo contractual legal con el empleado y/o que no esté previsto o permitido por la legislación nacional. Las deducciones de salarios y pagos a empleadores o agentes deben ser transparentes.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.9: La instalación no realizará deducciones de los salarios como parte de un proceso disciplinario.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.10: El solicitante sólo deberá emplear trabajadores legalmente documentados, ya sean nacionales o migrantes. Los registros de todos los trabajadores deberán incluir una copia de la identidad fotográfica.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.11: La instalación deberá mantener todos los documentos relevantes que verifiquen que los trabajadores contratados/subcontratados, ya sea contratados a través de un servicio laboral o de otro modo, reciban su pago de conformidad con todas las leyes locales sobre salarios, horas y horas extras.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.12: Todos los servicios de mano de obra, reclutamiento o empleo utilizados por la instalación deben tener licencia para operar por parte de la autoridad local o nacional gobierno como proveedor de mano de obra, cuando tales disposiciones existan en la ley.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.13: La instalación deberá mantener todos los documentos relevantes que verifiquen a los trabajadores a destajo (aquellos a los que se les paga una “tarifa a destajo” fija por cada unidad producido o acción realizada, independientemente del tiempo) se pagan de conformidad con la ley local, incluidas las regulaciones relativas a la equivalencia o superación de los requisitos mínimos de salarios, horas extras y pago de días festivos.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.14: La instalación deberá proporcionar a cada trabajador, ya sea por hora, asalariado, a destajo, temporal, estacional o de otro tipo, antes de la contratación y durante el empleo, información escrita y comprensible sobre los términos de empleo, derechos de los trabajadores, beneficios, compensación y horas. esperado, detalles de los salarios para cada período de pago y políticas de las instalaciones con respecto a acciones disciplinarias, procedimientos de quejas, deducciones autorizadas del salario y cuestiones laborales similares.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.15: Cuando se contratan trabajadores contratados/subcontratados o temporales a través de un servicio laboral o de empleo, la instalación se asegurará de que el servicio laboral o de empleo proporcione la información anterior antes y durante la contratación, en los idiomas apropiados, para garantizar que los trabajadores conozcan sus derechos y condiciones de empleo como se describe anteriormente.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.16: Los trabajadores tendrán derecho a rescindir su empleo después de un aviso razonable.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.17: La instalación deberá nombrar una persona gerencial responsable de garantizar la salud, la seguridad y la capacitación de los trabajadores.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.18: La instalación deberá identificar y eliminar o minimizar cualquier peligro para la salud y la seguridad en el lugar de trabajo mediante la realización de una evaluación de riesgos exhaustiva, que se revisa y actualiza según sea necesario. Esto incluye el requisito de investigación de incidentes o accidentes.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.19: Los trabajadores tendrán derecho a la negociación colectiva, o al menos un empleado será elegido por los trabajadores para representarlos ante la dirección.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.20: Habrá un proceso escrito de quejas de los trabajadores, disponible para todos los trabajadores, que permita la presentación anónima de quejas a la gerencia sin temor a represalias.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.21: La instalación brindará igualdad de oportunidades con respecto a la contratación, compensación, acceso a capacitación, promoción, despido y jubilación, independientemente de raza, género, embarazo, edad, orientación sexual o fe.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.22: La instalación deberá tratar a los trabajadores con respeto y no participar ni permitir abuso físico, verbal o sexual, ni intimidación o acoso.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.23: Si se proporciona, la vivienda para los empleados deberá cumplir con los estándares locales y nacionales (por ejemplo, estructuras herméticas, espacio adecuado, calefacción/ventilación/refrigeración), y deberá estar libre de basura y basura acumuladas.",
+      "NO",
+      "",
+      ""
+    ],
+    [
+      "",
+      "3.24: Agua potable segura deberá estar disponible para los empleados. Si se proporcionan comidas, éstas deberán ser saludables y acorde con las costumbres gastronómicas locales.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.25: Los empleados deberán disponer de baños e instalaciones para lavarse las manos.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.26: En caso de accidentes o emergencias, el solicitante deberá brindar atención médica básica, incluido el acceso o la comunicación con las autoridades médicas. Además, los botiquines de primeros auxilios deberán estar fácilmente disponibles para los empleados, y cualquier contenido caducado será reemplazado",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.27: El solicitante deberá brindar capacitación adecuada a los empleados en salud general, higiene personal y seguridad (incluida la seguridad en tierra y acuática y el uso de embarcaciones y equipos asociados) y riesgos de contaminación del producto. Todo el personal debe comprender los procedimientos de seguridad.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.28: Los planes de respuesta a emergencias se prepararán según corresponda en función de los riesgos regionales y específicos del sitio. Estos pueden incluir desastres naturales, enfermedades graves o accidentes.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.29: Se deberá familiarizar a trabajadores seleccionados con los detalles de los planes de respuesta a emergencias y capacitarlos en primeros auxilios en caso de descarga eléctrica, hemorragia profusa, ahogamiento y otras posibles emergencias médicas.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.30: Se debe proporcionar equipo y equipo de protección en buen estado de funcionamiento a los empleados (por ejemplo, protección para los ojos para soldar, guantes para trabajos en taller, botas para zonas húmedas). Auditor para verificar el despliegue.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.31: Todas las herramientas y maquinaria eléctricas y mecánicas se mantendrán y utilizarán de acuerdo con las instrucciones del fabricante recomendaciones y normas nacionales legislativas y de asesoramiento. La maquinaria deberá tener protectores de seguridad adecuados para el eje de transmisión y/o la correa de transmisión.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.32: El solicitante deberá cumplir con las leyes que rigen el buceo en granjas de acuicultura y desarrollar un plan de seguridad de buceo por escrito que requiere que solo se utilicen buzos capacitados según estándares comerciales nacionales o internacionales y el mantenimiento de registros que documenten los procedimientos, incidentes relacionados con la seguridad y el mantenimiento de los equipos. Se establecerán y controlarán límites de tiempo bajo el agua.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.33: El solicitante deberá proporcionar procedimientos escritos y capacitación del personal para manejar emergencias de buceo y auditar periódicamente los registros y procedimientos. El plan de respuesta a emergencias incluirá disposiciones para el acceso a servicios apropiados.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "3.34: Las operaciones de embarcaciones deberán ser seguras y contar con la licencia correspondiente.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "Medio ambiente",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "4. Capacidad de carga",
+      "4.1: El solicitante deberá proporcionar evidencia de la regulación local o evidencia científica de que las operaciones de cultivo no exceden ni execeran la capacidad de carga de producción del cuerpo de agua, solo o en combinación con otras operaciones de cultivo, según los límites regulatorios o la investigación previa como se especifica en los requisitos de implementación. La evidencia de respaldo deberá ser proporcionada y verificada por el auditor o un revisor independiente acordado.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "o",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "4.2.1: Para sitios de cultivo establecidos, el solicitante deberá proporcionar evidencia de prácticas responsables en el establecimiento de existencias, tres ciclos de cultivo antes de la aplicación o durante el tiempo densidades apropiadas a las condiciones locales, incluidas mediciones biológicas de la tasa de crecimiento y/o rendimiento de carne, durante un período de al menos tres ciclos de cultivo antes de la aplicación, o durante el tiempo que el sitio de cultivo haya estado en operación, si durante menos de tres ciclos.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "4.2.2: Los solicitantes deberán realizar muestreos regulares de la longitud de la concha y el peso del tejido, y/o del índice de condición u otras variables de crecimiento relevantes en los sitios de cultivo, y este valor no deberá ser inferior al 70 por ciento de la métrica respectiva en un sitio de referencia durante un mínimo de tres ciclos de cultivo antes de la aplicación o durante el tiempo que dure el sitio. ha estado en funcionamiento.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "4.2.3: El solicitante deberá producir un plan de gestión que describa las acciones correctivas o colaborativas que se tomarán cuando se excede la capacidad de carga de producción a nivel de finca o ecosistema.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "5. Suministro de semillas silvestres y de incubación",
+      "5.1 : El solicitante designará un miembro del personal capacitado para supervisar y autorizar todos los movimientos de reproductores, semillas o moluscos juveniles dentro y fuera del sitio de cultivo.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "5.2 : El miembro del personal designado deberá garantizar el cumplimiento de todos los requisitos legales para los movimientos de mariscos y notificación de cualquier especie exótica invasora o plaga de declaración obligatoria. (Ver también la Sección 9.)",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "5.3 : El solicitante deberá mantener registros actualizados y precisos de todos los movimientos de semillas de moluscos dentro y fuera del cultivo sitio para garantizar la trazabilidad total y demostrar el cumplimiento de cualquier reglamentación relacionada con el transporte de semillas producidas en criaderos y la cosecha silvestre o recolección de reproductores o semillas.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "5.4 : Cuando no esté cubierto por la legislación, el solicitante proporcionará documentación de que las semillas producidas en criaderos de otras biorregiones oceanográficas\r\nprovienen de instalaciones con programas de monitoreo de la salud que toman en consideración patógenos enzoóticos, organismos notificables y patógenos\r\nincluidos en la lista de la OIE; y se pueda demostrar que la semilla tiene un estado sanitario equivalente o superior al de la zona receptora.",
+      "NO",
+      "",
+      ""
+    ],
+    [
+      "",
+      "5.5 : El solicitante deberá contar con procedimientos escritos y prueba de su implementación para el control de invasión extraterrestre especies que incluye el seguimiento de cualquier especie marina previamente desconocida dentro o sobre las poblaciones de moluscos. (Ver también Sección 9.)",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "5.6 : El solicitante deberá capacitar al personal en la aplicación de procedimientos de seguimiento.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "5.7 : No se aceptarán semillas en el sitio de ningún suministro que se origine o pase por una instalación o área bajo restricción por motivos oficiales de gestión de enfermedades, excepto cuando la autoridad competente haya aprobado las técnicas apropiadas de mitigación del riesgo que puedan aplicarse.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "5.8 : Cuando no se aplique la legislación, el solicitante deberá documentar los esfuerzos para abordar las preocupaciones genéticas particulares del especies y regiones geográficas donde se plantará la semilla.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "5.9 : Si se utilizan semillas de moluscos silvestres con preferencia a semillas de criadero, se deberán proporcionar justificaciones válidas.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "5.10 : Para la recolección de semillas silvestres, en ausencia de regulaciones apropiadas, se deberá elaborar un plan de control elaborado e implementado para minimizar cualquier impacto perjudicial en las poblaciones silvestres de moluscos objetivo y no objetivo y en el ecosistema en general. El plan deberá abarcar cualquier práctica de recolección perjudicial para el medio ambiente.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "6. Efectos de los sedimentos",
+      "6.1: Los solicitantes de la certificación BAP deberán producir un informe de antecedentes que describa las condiciones hidrográficas y bentónicas en el sitio de cultivo y tome nota de cualquier estándar local para los impactos bentónicos debajo y adyacente al área de cultivo de moluscos.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "6.2: En países o regiones donde se requiere monitoreo de sedimentos con respecto al cultivo de moluscos, los solicitantes deberán demostrar un historial de cumplimiento durante dos años o dos ciclos de producción para granjas establecidas, lo que sea más largo, con cualquier esquema de monitoreo regulatorio o iniciativa de mejores prácticas que los reguladores locales o nacionales consideren apropiados.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "6.3: En países o regiones donde no se requiere monitoreo de sedimentos, y donde el informe de antecedentes del sitio identificó el potencial de impactos locales significativos, los solicitantes deberán nominar a una persona o empresa independiente con experiencia demostrada en muestreo y análisis de sedimentos para diseñar un muestreo y análisis de sedimentos. programa adecuado a las condiciones del sitio de cultivo y para realizar monitoreo de sedimentos. El programa deberá definir estándares de calidad ambiental apropiados y acciones para mitigar los impactos si estos se exceden.",
+      "NO",
+      "",
+      ""
+    ],
+    [
+      "",
+      "6.4: En países o regiones donde no se requiere monitoreo de sedimentos y donde el informe de antecedentes del sitio identificó el potencial de impactos locales significativos, los solicitantes deberán realizar muestreos de sedimentos a intervalos de tiempo espaciales y en una escala apropiada tanto para los métodos de cultivo y cosecha, como para la geografía local del sitio de cultivo de acuerdo con el programa de muestreo de sedimentos recomendado por el individuo o la empresa en Norma 6.3.",
+      "NO",
+      "",
+      ""
+    ],
+    [
+      "",
+      "6.5: El monitoreo de las condiciones de los sedimentos se implementará de acuerdo con los requisitos de los permisos de operación del sitio de cultivo o su propio plan en países o regiones donde no se requiere el monitoreo de sedimentos, y como se especifica en el requisitos de implementación.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "6.6: El muestreo y análisis de sedimentos realizados como parte de cualquier programa de monitoreo se llevarán a cabo utilizando métodos que\r\ncumplan con los estándares internacionales generalmente aceptados.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "6.7: El solicitante deberá adoptar cualquier medida de cría adecuada o las mejores prácticas locales disponibles para mitigar los posibles impactos negativos en los sedimentos del cultivo de moluscos, según lo evaluado y acordado por los reguladores locales o nacionales, según corresponda.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "6.8: En los casos en que el programa de monitoreo de sedimentos identifique impactos adversos significativos, el solicitante deberá adoptar acciones correctivas.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "7. Interacciones entre depredadores y vida silvestre",
+      "7.1: Si el sitio de cultivo de moluscos opera en una jurisdicción con regulaciones gubernamentales relacionadas con las interacciones con la vida silvestre y control de depredadores, el solicitante deberá cumplir con la reglamentación. La prueba de cumplimiento puede incluir una certificación y/o una carta oficial del organismo rector.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "7.2: Independientemente de las reglas locales, el solicitante deberá tener un Plan de interacción con la vida silvestre escrito consistente con LOS requisitos de implementación anteriores y que cumpla con los requisitos de procedimiento, desempeño y presentación de informes en esto.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "7.3: Si el sitio de cultivo opera en una jurisdicción sin regulaciones gubernamentales relacionadas con las interacciones con la vida silvestre y control de depredadores, el WIP deberá proporcionar una evaluación de impacto de que el sitio no tendrá un impacto negativo significativo en la vida silvestre local, si se opera correctamente. Este dictamen se verificará con referencia a los resultados del seguimiento del WIP, cuando en su caso, en la próxima auditoría.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "7.4: La instalación deberá utilizar métodos humanos de disuasión de depredadores y favorecer activamente métodos de control no letales, los permisos gubernamentales para el control de depredadores deberán estar disponibles para su revisión.",
+      "NO",
+      "",
+      ""
+    ],
+    [
+      "",
+      "7.5: La instalación deberá mantener una lista de especies que se encuentran dentro de las cercanías de la granja y que están clasificadas como en peligro o amenazadas según las leyes regionales y/o la Lista Roja de la UICN.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "7.6: Excepto en circunstancias excepcionales, como riesgo para la vida humana, no se aplicarán controles distintos de la exclusión no letal a las especies de depredadores enumeradas como en peligro o en peligro crítico en el Listado Rojo de la UICN protegidas por leyes locales o nacionales.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "7.7: La instalación deberá registrar e informar mortalidades, cuando sea necesario, las especies y números de todas las aves, mamíferos y reptiles.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "7.8: Los empleados agrícolas deberán estar familiarizados con las disposiciones del WIP y capacitados en los aspectos del mismo que se les puede pedir que implementen los miembros específicos del personal designado para llevar a cabo medidas de control letal de depredadores vertebrados recibirán formación en métodos de sacrificio no crueles.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "7.9: El solicitante deberá proporcionar una lista de las leyes locales pertinentes y las condiciones específicas de los permisos de operación que se aplican a la vida silvestre gestión y protección.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "7.10 : Los sitios marinos deberán conservar mapas que identifiquen áreas ecológicamente sensibles (ESA) en la región, incluidas, entre otras, áreas de hábitat críticas oficialmente designadas. Se informará al personal sobre las medidas apropiadas para operar en estas áreas y sus alrededores. ",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "7.11 : Deberán estar disponibles documentos que describan las medidas pasivas implementadas para disuadir a los posibles depredadores y procedimientos para la inspección rutinaria y el mantenimiento de las medidas.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "7.12 : Deberán estar disponibles documentos que demuestren que cualquier medida disuasoria activa pero no letal utilizada está aprobada por reguladores a través de una revisión de los impactos ambientales con referencia específica a los cetáceos, protegidos o en peligro de extinción en la zona. Dichos dispositivos no se utilizarán si la revisión demuestra que pueden afectar negativamente a estas especies.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "8. Almacenamiento y eliminación de suministros",
+      "8.1: El solicitante deberá tener un Plan escrito de almacenamiento, manipulación y eliminación de residuos de materiales (MSHWD) que cumpla con los requisitos BAP para un manejo y eliminación adecuados, como se describe en los requisitos de implementación.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "8.2: El personal del sitio de cultivo deberá estar familiarizado con el MSHWDP y capacitado en aspectos del mismo que puedan necesitar implementar.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "8.3: Se deberá mantener un inventario de todos los materiales o desechos peligrosos que se almacenen o eliminen en el sitio de cultivo.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "8.4: Las Hojas de Datos de Seguridad de Materiales deberán estar disponibles para todos los materiales peligrosos en su lugar de uso. El solicitante deberá demostrar que se siguen todas las pautas aplicables en la hoja MSDS (por ejemplo, uso seguro, equipo de seguridad y eliminación).",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "8.5: El combustible, los lubricantes y los productos químicos se etiquetarán, almacenarán y eliminarán de manera segura y responsable y marcado con señales de advertencia.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "8.6: Se deben tomar precauciones para evitar derrames, incendios y explosiones, y los procedimientos y suministros deben estar disponibles fácilmente disponibles para gestionar derrames o fugas de productos químicos y combustible.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "8.7: La basura procedente de viviendas y residuos de alimentos se conservará en recipientes herméticos con tapas para proteger el contenido de insectos, roedores y otros animales.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "8.8: La basura y otros desechos sólidos se eliminarán para cumplir con las regulaciones locales y evitar la contaminación ambiental.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "8.9: Si algún equipo o recipiente de un sitio de cultivo es tratado con cobre u otros materiales antiincrustantes a base de tóxicos, y/o su proceso de lavado tiene la capacidad de producir contaminantes, los procedimientos de limpieza deben recolectar, tratar y eliminar el agua de lavado de una manera que no resulte en una contaminación ambiental o de acuerdo con los estándares aprobados de limpieza con agua en la jurisdicción correspondiente, que se han desarrollado teniendo en cuenta los riesgos para la bioseguridad y el medio ambiente. ",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "8.10: El solicitante deberá demostrar que se han implementado mejores prácticas de gestión para prevenir los artes abandonados (por ejemplo, instalación adecuada e inspecciones periódicas de la infraestructura) y que existen políticas para localizar, recuperar y eliminar adecuadamente los artes abandonados.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "9. Bioseguridad y Manejo de Enfermedades",
+      "9.1: El solicitante deberá designar a un miembro del personal capacitado con experiencia relevante en sanidad y bioseguridad de los moluscos para supervisar el desarrollo y la actualización de un Plan de Gestión de la Sanidad de los Moluscos (SHMP).",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "9.2: El miembro del personal capacitado deberá garantizar que todos los empleados se mantengan actualizados sobre cualquier cambio o enmienda al SHMP y que los nuevos miembros del personal se sometan a una inducción adecuada a sus actividades y responsabilidades dentro del sitio de cultivo.",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "9.3: El solicitante deberá contar con planes escritos de gestión de bioseguridad y salud y procedimientos de monitoreo consistentes con los requisitos de implementación.",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "9.4: El miembro del personal capacitado deberá garantizar el cumplimiento de todos los requisitos legales para pruebas de enfermedades, movimientos de mariscos (incluidas las regulaciones zoosanitarias para los transportes entrantes y salientes) y notificación de enfermedades de declaración obligatoria, enfermedades exóticas especies invasoras, plagas y organismos incrustantes.",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "9.5: El solicitante deberá tener prueba de la implementación de procedimientos escritos para el control de enfermedades en mariscos que incluyan el seguimiento de enfermedades endémicas, así como de parásitos, plagas y organismos contaminantes.",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "9.6: El solicitante deberá contar con procedimientos escritos para manejar la mortalidad masiva, incluida la eliminación del ganado muerto.",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "9.7: El solicitante deberá tener prueba de la implementación de procedimientos escritos para el control de especies exóticas invasoras que incluyan el monitoreo de cualquier especie marina previamente desconocida dentro o sobre las poblaciones de moluscos.",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "9.8: El solicitante deberá capacitar al personal del sitio de cultivo en la aplicación de procedimientos de bioseguridad, monitoreo y gestión sanitaria.",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "9.9: Observaciones por parte del personal del sitio de cultivo de niveles anormales de mortalidad o indicadores de enfermedades, y acciones resultantes relacionadas con el diagnóstico y tratamiento de la enfermedad se informará al miembro del personal designado y se registrará.",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "9.10: El solicitante deberá tener prueba de la implementación de procedimientos para la disposición sanitaria de mariscos muertos bajo niveles de mortalidad normales y anormales.",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "9.11: El solicitante deberá tener pruebas de la implementación de procedimientos escritos para eliminar y eliminar las incrustaciones organismos. Estos procedimientos incluirán el uso y eliminación de cualquier tratamiento químico, que se aplicará de acuerdo con las instrucciones del fabricante y de conformidad con las regulaciones locales y nacionales existentes.",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "9.12: El solicitante deberá registrar datos sobre los brotes de enfermedades y las acciones tomadas para que esta información pueda estar disponible para auditores.",
+      "",
+      "",
+      ""
+    ],
+    [
+      "10. Protección de áreas ecológicamente sensibles",
+      "10.1: Cuando el plano del sitio muestra que una ESA ha sido dañada por la construcción y/o operación de la instalación desde 1999, la pérdida deberá haber sido sólo para fines permitidos.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "10.2: Si la pérdida neta de área ecológicamente sensible ocurrió en la propiedad de la instalación desde 1999, la pérdida deberá haber sido mitigada por restaurar una superficie tres veces mayor o mediante una donación equivalente a proyectos de restauración.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "10.3: Para instalaciones construidas antes de 1999 y donde una ESA fue dañada pero no restaurada, el solicitante deberá proponer un plan, sujeto a las regulaciones locales, que dentro de los cinco años a partir de la fecha de la certificación BAP inicial restablezca la área dañada, mitigar el daño restaurando un área igual de hábitat similar o hacer una donación de equivalente valor para otros proyectos de restauración. Alternativamente, el solicitante deberá proporcionar una explicación de las circunstancias atenuantes relacionadas con el daño para considerar la exención de esta norma.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "10.4: La operación de la instalación no deberá provocar erosión o deterioro costero, ni causar otros daños al ecosistema que no recuperar dentro del ciclo de vida natural de la fauna o flora principal dañada.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "10.5: A menos que se apliquen permisos específicos, las operaciones de la instalación no alterarán las condiciones hidrológicas de la cuenca circundante, y no se alterará el flujo normal de agua salobre a los manglares o de agua dulce a los humedales.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "Seguridad alimentaria",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "11. Control de posibles peligros para la seguridad alimentaria",
+      "11.1: Deberá estar disponible documentación que demuestre la participación y el cumplimiento del programa regulatorio/clasificación nacional del país anfitrión.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "11.2: Deberá estar disponible documentación que informe una evaluación de riesgos del sitio para identificar el impacto potencial de las fuentes de contaminación en aguas culturales. Cuando sea posible, esto debe hacer referencia a cualquier estudio sanitario empleado y la proximidad a las descargas de aguas residuales impactantes y a las fuentes históricas, como los metales pesados que pueden persistir en el medio ambiente.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "11.3: Deberá estar disponible documentación que demuestre la implementación de un HACCP funcional o un sistema de gestión de seguridad alimentaria equivalente dentro de la cadena de valor antes de que los consumidores la reciban. El plan de inocuidad de los alimentos deberá incluir una evaluación de riesgos para todos los peligros potenciales para la inocuidad de los alimentos que esté anclada en un programa para documentar los lugares y tiempos de cultivo y cosecha.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      " 11.4: Deberá estar disponible documentación para un programa de monitoreo del sitio que incluya datos de mariscos previos a la cosecha y/o datos de calidad del agua obtenidos con suficiente frecuencia para reflejar las tendencias en magnitud y variabilidad en los niveles de contaminación este estándar puede satisfacerse con esfuerzo e información por parte de las autoridades asignadas y/o el programa de productores equivalente.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "11.5: La documentación deberá incluir un plan de retirada por escrito respaldado con la identidad inicial del producto para el cultivo y el tiempo de desde la cosecha hasta la distribución hasta el consumo (por ejemplo, etiquetado del producto en el momento de la cosecha).",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "11.6: Deberá estar disponible documentación que demuestre las pruebas del producto final para cumplir con las normas, la debida diligencia y requisitos HACCP especificados por los países exportadores e importadores.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "11.7: Los equipos y contenedores utilizados para cosechar y transportar mariscos deberán estar limpios y libres de lubricantes, combustible, metales, fragmentos y otros materiales extraños.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "11.8: El hielo en el que se colocan los mariscos después de la recolección deberá estar elaborado con agua potable o agua de mar que haya sido desinfectados según un estándar equivalente.",
+      "NO",
+      "",
+      ""
+    ],
+    [
+      "",
+      "11.9: Cuando se utilicen instalaciones de depuración u otras instalaciones de tratamiento poscosecha para limpiar los moluscos o reducir posibles contaminantes, se deberá proporcionar documentación para evidenciar el estado reconocido o autorizado del determinado funcionamiento de acuerdo con las directrices reglamentarias y/o medidas para un funcionamiento eficaz.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "11.10: El producto cosechado deberá protegerse de la exposición a condiciones climáticas adversas, calor excesivo, aves y otros posibles contaminantes o abuso del producto.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "Trazabilidad",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "12. Requisito de mantenimiento de registros",
+      "12.1: Se mantendrán registros de trazabilidad para cada uno de los parámetros especificados para cada unidad de producción y cada ciclo de producción permite el rastreo de moluscos hasta el área de recolección, cualquier área de reinstalación o ubicación de manipulación posterior, como un centro de envío/empaque o un centro de depuración. Los registros de lotes consolidados deben conservar los documentos originales de los diferentes lugares de recolección y manipulación que ayudará a la trazabilidad.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "12.2: La instalación deberá operar un sistema de mantenimiento de registros eficaz que proporcione entradas oportunas, organizadas y precisas, realizadas y supervisadas por una persona o equipo capacitado designado responsable de recopilar los datos, garantizando que sean completos y precisos, y que se cumplan los requisitos de trazabilidad.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "12.3: La instalación deberá mantener registros completos y precisos para cada unidad de cultivo y ciclo de producción, incluido el número de identificación de la unidad de cultivo, el área de la unidad y la especie.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "12.4: La instalación deberá mantener registros completos y precisos sobre el uso de productos químicos en la instalación.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "12.5: La instalación deberá mantener registros completos y precisos de las fuentes y números de semillas almacenadas, y las fechas de almacenamiento para cada unidad de cultivo.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "12.6: Se deberán mantener registros completos y precisos sobre la fecha de cosecha, la cantidad de cosecha, el número de documento de movimiento (si corresponde) y las plantas de procesamiento o los compradores. Si los lotes de productos están destinados a más de una planta o comprador, cada lote se identificará por separado.\r\n",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "12.7: Para utilizar el logotipo de BAP, las instalaciones deberán tener dicho uso aprobado y registrado previamente con BAP.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "12.8: La instalación deberá mantener registros de cualquier queja de los clientes relacionada con el cumplimiento de sus productos con los estándares BAP.",
+      "SI",
+      "SI",
+      ""
+    ],
+    [
+      "",
+      "12.9: La instalación deberá mantener registros de las investigaciones de dichas quejas y las acciones tomadas para abordarlas/corregirlas.",
+      "SI",
+      "SI",
+      ""
+    ]
+  ]
+}

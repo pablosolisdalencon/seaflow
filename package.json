@@ -1,0 +1,16 @@
+{
+    "name": "seaflow-root",
+    "version": "1.0.0",
+    "description": "Root configuration for SGI Seaflow",
+    "private": true,
+    "scripts": {
+        "install:all": "npm install && cd back && npm install && cd ../front && npm install",
+        "back": "cd back && npm run dev",
+        "front": "cd front && npm run dev",
+        "dev": "npx concurrently \"npm run back\" \"npm run front\"",
+        "seed": "cd back && npm run seed"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}

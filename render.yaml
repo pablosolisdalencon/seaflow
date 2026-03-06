@@ -1,0 +1,41 @@
+services:
+  # 1. Backend API (Web Service)
+  - type: web
+    name: seaflow-api-qa
+    env: node
+    plan: free
+    region: oregon # or your preferred region
+    buildCommand: cd back && npm install
+    startCommand: cd back && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DB_HOST
+        value: a-oiem-api-db-mysql-service-a-oiem-api-db.d.aivencloud.com
+      - key: DB_PORT
+        value: 26213
+      - key: DB_USER
+        value: avnadmin
+      - key: DB_PASS
+        fromConfig: DB_PASS # To be set in Render Dashboard
+      - key: DB_NAME
+        value: seaflow-db
+      - key: FRONTEND_URL
+        value: https://seaflow.onrender.com
+
+  # 2. Frontend (Static Site)
+  - type: static
+    name: seaflow-front-qa
+    env: static
+    plan: free
+    region: oregon
+    buildCommand: cd front && npm install && npm run build
+    staticPublishPath: front/dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://seaflow-api-qa.onrender.com/api
+    routingRules:
+      - route: /*
+        rewritePath: /index.html
