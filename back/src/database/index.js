@@ -1,5 +1,6 @@
 const { Sequelize } = require('sequelize');
-const config = require('../config/database').development;
+const env = process.env.NODE_ENV || 'development';
+const config = require('../config/database')[env];
 
 const sequelize = new Sequelize(
     config.database,
@@ -10,6 +11,7 @@ const sequelize = new Sequelize(
         port: config.port,
         dialect: config.dialect,
         logging: config.logging,
+        dialectOptions: config.dialectOptions,
         define: config.define
     }
 );
