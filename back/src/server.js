@@ -22,8 +22,9 @@ app.use('/api', routes);
 const frontPath = path.join(__dirname, '../../front/dist');
 app.use(express.static(frontPath));
 
-// Catch-all route for React Router support
-app.get('/:path*', (req, res) => {
+// Catch-all middleware for SPA fallback (React Router)
+// This avoids path-to-regexp validation errors in Express 5
+app.use((req, res) => {
     res.sendFile(path.join(frontPath, 'index.html'));
 });
 
