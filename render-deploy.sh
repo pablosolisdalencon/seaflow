@@ -17,7 +17,7 @@ npm install --prefix front
 
 # 2. Build Frontend
 echo "🏗️ Building frontend assets..."
-npm run build --prefix front
+(cd front && npm run build)
 
 # 3. Database Seeding
 # We use the existing seeder script. 

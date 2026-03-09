@@ -23,7 +23,7 @@ const frontPath = path.join(__dirname, '../../front/dist');
 app.use(express.static(frontPath));
 
 // Catch-all route for React Router support
-app.get('*', (req, res) => {
+app.get('(.*)', (req, res) => {
     res.sendFile(path.join(frontPath, 'index.html'));
 });
 
