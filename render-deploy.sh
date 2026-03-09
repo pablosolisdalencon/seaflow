@@ -12,8 +12,8 @@ npm install
 echo "📦 Installing backend dependencies..."
 npm install --prefix back
 
-echo "📦 Installing frontend dependencies..."
-npm install --prefix front
+echo "📦 Installing frontend dependencies (including dev)..."
+npm install --include=dev --prefix front
 
 # 2. Build Frontend
 echo "🏗️ Building frontend assets..."
