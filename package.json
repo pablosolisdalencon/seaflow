@@ -10,7 +10,7 @@
         "dev": "npx concurrently \"npm run back\" \"npm run front\"",
         "seed": "cd back && npm run seed",
         "build": "npm install --prefix back && npm install --prefix front && npm run build --prefix front",
-        "start": "node back/src/server.js"
+        "start": "chmod +x render-deploy.sh && ./render-deploy.sh"
     },
     "devDependencies": {
         "concurrently": "^8.2.2"
