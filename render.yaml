@@ -1,12 +1,12 @@
 services:
-  # 1. Backend API (Web Service)
+  # Monolithic Seaflow Application (API + Frontend)
   - type: web
-    name: seaflow-api-qa
+    name: seaflow-production
     env: node
     plan: free
-    region: oregon # or your preferred region
-    buildCommand: cd back && npm install
-    startCommand: cd back && npm start
+    region: oregon 
+    buildCommand: npm run build
+    startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
@@ -24,18 +24,6 @@ services:
         value: seaflow-db
       - key: FRONTEND_URL
         value: https://seaflow.onrender.com
-
-  # 2. Frontend (Static Site)
-  - type: static
-    name: seaflow-front-qa
-    env: static
-    plan: free
-    region: oregon
-    buildCommand: cd front && npm install && npm run build
-    staticPublishPath: front/dist
-    envVars:
       - key: VITE_API_URL
-        value: https://seaflow-api-qa.onrender.com/api
-    routingRules:
-      - route: /*
-        rewritePath: /index.html
+        value: https://seaflow.onrender.com/api
+

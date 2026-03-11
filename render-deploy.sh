@@ -5,27 +5,10 @@
 
 echo "🚀 Starting Unified Deployment Process..."
 
-# 1. Install Dependencies
-echo "📦 Installing root dependencies..."
-npm install
-
-echo "📦 Installing backend dependencies..."
-npm install --prefix back
-
-echo "📦 Installing frontend dependencies (including dev)..."
-(cd front && npm install --include=dev)
-
-# 2. Build Frontend
-echo "🏗️ Building frontend assets..."
-(cd front && npm run build)
-
-# 3. Database Seeding
-# We use the existing seeder script. 
-# In production, this ensures the DB is populated with the base blueprint.
+# 1. Database Seeding (Optional, but included for PARKO protocol)
 echo "🗄️ Seeding database..."
 npm run seed --prefix back
 
-# 4. Start Application
-# The backend will now serve the frontend assets.
+# 2. Start Application
 echo "✨ Lifting application..."
 node back/src/server.js
