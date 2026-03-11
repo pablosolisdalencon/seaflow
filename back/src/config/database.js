@@ -9,6 +9,11 @@ module.exports = {
         port: process.env.DB_PORT || 3306,
         dialect: 'mysql',
         logging: false,
+        dialectOptions: (process.env.DB_HOST && process.env.DB_HOST !== 'localhost') ? {
+            ssl: {
+                rejectUnauthorized: false
+            }
+        } : {},
         define: {
             timestamps: true,
             underscored: true

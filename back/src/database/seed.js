@@ -1,8 +1,11 @@
 const bcrypt = require('bcryptjs');
-const { sequelize, Role, User, Area, Normativa, Articulo, PermisologiaTierra, ConcesionAcuicultura, ConcesionMaritima, Notificacion, Infa, Procedimiento, BitacoraActualizacion, Auditoria, Hallazgo, Compromiso, ReporteExterno, Certificacion, RequisitoCertificacion, Capacitacion, RegistroCapacitacion, Carta, ActividadBitacora } = require('./models');
+const { sequelize, Role, User, Area, Normativa, Articulo, PermisologiaTierra, ConcesionAcuicultura, ConcesionMaritima, Notificacion, Infa, EstacionInfa, Procedimiento, BitacoraActualizacion, Auditoria, Hallazgo, Compromiso, ReporteExterno, Certificacion, RequisitoCertificacion, Capacitacion, RegistroCapacitacion, Carta, ActividadBitacora } = require('./models');
 
 async function seed() {
     try {
+        console.log(`Connecting to database at ${sequelize.options.host}...`);
+        await sequelize.authenticate();
+        console.log('Connection verified. Syncing models...');
         await sequelize.sync({ force: true });
         console.log('Database synced (force: true) - SGI Seaflow Full MVP 2026.03');
 

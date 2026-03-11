@@ -17,7 +17,7 @@ const Hallazgo = sequelize.define('Hallazgo', {
         allowNull: false
     },
     severity: {
-        type: DataTypes.ENUM('CRITICA', 'MAYOR', 'MENOR', 'OBSERVACION')
+        type: DataTypes.ENUM('CRITICA', 'MAYOR', 'MENOR', 'OBSERVACION', 'N/A')
     },
     status: {
         type: DataTypes.ENUM('Cumple', 'No Cumple', 'Abierto', 'Cerrado'),
