@@ -22,6 +22,12 @@ const Procedimiento = sequelize.define('Procedimiento', {
     },
     last_update: {
         type: DataTypes.DATEONLY
+    },
+    area_id: {
+        type: DataTypes.INTEGER
+    },
+    file_path: {
+        type: DataTypes.STRING(255)
     }
 }, {
     tableName: 'procedimientos',

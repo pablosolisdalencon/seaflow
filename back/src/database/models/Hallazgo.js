@@ -20,8 +20,12 @@ const Hallazgo = sequelize.define('Hallazgo', {
         type: DataTypes.ENUM('CRITICA', 'MAYOR', 'MENOR', 'OBSERVACION')
     },
     status: {
-        type: DataTypes.ENUM('ABIERTO', 'EN_PROCESO', 'CERRADO'),
-        defaultValue: 'ABIERTO'
+        type: DataTypes.ENUM('Cumple', 'No Cumple', 'Abierto', 'Cerrado'),
+        defaultValue: 'Abierto'
+    },
+    categoria: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
 }, {
     tableName: 'hallazgos',

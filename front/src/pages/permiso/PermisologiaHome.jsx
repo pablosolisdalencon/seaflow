@@ -53,10 +53,12 @@ const PermisologiaHome = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {ccaaData?.filter(d => d.Area?.name === activeArea).map((d, idx) => (
-                                        <tr key={idx} style={{ borderBottom: '1px solid #ccc', background: idx % 2 === 0 ? '#fff' : '#f1f3f4' }}>
+                                    {loadingCCAA ? (
+                                        <tr><td colSpan="3" style={{ padding: '0.5rem', textAlign: 'center' }}>Cargando...</td></tr>
+                                    ) : ccaaData?.filter(d => d.Area?.name === activeArea).map((d, idx) => (
+                                        <tr key={d.id} style={{ borderBottom: '1px solid #ccc', background: idx % 2 === 0 ? '#fff' : '#f1f3f4' }}>
                                             <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.entity || 'Acuicultura'}</td>
-                                            <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>Cód: {d.code_centro} - {d.species}</td>
+                                            <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>Cód: {d.codigo_centro} - {d.ResExNumber || 'Res. Ex.'}</td>
                                             <td style={{ padding: '0.5rem', display: 'flex', gap: '0.25rem', justifyContent: 'center' }}>
                                                 <div onClick={() => navigate('/permisologia/pdf')} style={{ border: '1px solid #042c4c', color: '#042c4c', padding: '2px', cursor: 'pointer' }}><FileSearch size={14} /></div>
                                                 <div style={{ border: '1px solid #042c4c', color: '#042c4c', padding: '2px', cursor: 'pointer' }}><Download size={14} /></div>
@@ -128,15 +130,17 @@ const PermisologiaHome = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {ccmmData?.filter(d => d.Area?.name === activeArea).map((d, idx) => (
-                                <tr key={idx} style={{ borderBottom: '1px solid #ccc' }}>
-                                    <td onClick={() => navigate('/permisologia/ccmm-docs')} style={{ padding: '0.5rem', borderRight: '1px solid #000', color: '#1a73e8', cursor: 'pointer', textDecoration: 'underline' }}>{d.status_tramite || 'Solicitud'}</td>
-                                    <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.createdAt?.split('T')[0]}</td>
-                                    <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.decreto_number || 'N/A'}</td>
+                            {loadingCCMM ? (
+                                <tr><td colSpan="7" style={{ padding: '0.5rem', textAlign: 'center' }}>Cargando...</td></tr>
+                            ) : ccmmData?.filter(d => d.Area?.name === activeArea).map((d, idx) => (
+                                <tr key={d.id} style={{ borderBottom: '1px solid #ccc' }}>
+                                    <td onClick={() => navigate('/permisologia/ccmm-docs')} style={{ padding: '0.5rem', borderRight: '1px solid #000', color: '#1a73e8', cursor: 'pointer', textDecoration: 'underline' }}>{d.solicitado || 'Solicitud'}</td>
+                                    <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.inicio_tramite || 'N/A'}</td>
+                                    <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.num_tramite || 'N/A'}</td>
                                     <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.status_tramite}</td>
-                                    <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.decreto_number}</td>
-                                    <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.expiry_date}</td>
-                                    <td style={{ padding: '0.5rem' }}>Concesión Marítima {activeArea}</td>
+                                    <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.resolucion || 'N/A'}</td>
+                                    <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.expiry_date || 'N/A'}</td>
+                                    <td style={{ padding: '0.5rem' }}>{d.objeto}</td>
                                 </tr>
                             ))}
                         </tbody>
@@ -196,11 +200,13 @@ const PermisologiaHome = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {permisosTierra.data?.filter(d => d.Area?.name === activeArea).map((d, idx) => (
-                                <tr key={idx} style={{ borderBottom: '1px solid #ccc', background: idx % 2 === 0 ? '#fff' : '#f1f3f4' }}>
+                            {permisosTierra.isLoading ? (
+                                <tr><td colSpan="5" style={{ padding: '0.5rem', textAlign: 'center' }}>Cargando...</td></tr>
+                            ) : permisosTierra.data?.filter(d => d.Area?.name === activeArea).map((d, idx) => (
+                                <tr key={d.id} style={{ borderBottom: '1px solid #ccc', background: idx % 2 === 0 ? '#fff' : '#f1f3f4' }}>
                                     <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.document_name}</td>
                                     <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.number || 'N/A'}</td>
-                                    <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.date}</td>
+                                    <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.issue_date}</td>
                                     <td style={{ padding: '0.5rem', borderRight: '1px solid #000' }}>{d.detail || 'Sin detalles'}</td>
                                     <td style={{ padding: '0.5rem', display: 'flex', gap: '0.25rem', justifyContent: 'center', height: '100%' }}>
                                         <div onClick={() => navigate('/permisologia/pdf')} style={{ border: '1px solid #042c4c', color: '#042c4c', padding: '2px', cursor: 'pointer' }}><FileSearch size={14} /></div>

@@ -20,6 +20,21 @@ const ConcesionMaritima = sequelize.define('ConcesionMaritima', {
     },
     status_tramite: {
         type: DataTypes.STRING(100)
+    },
+    solicitado: {
+        type: DataTypes.STRING
+    },
+    inicio_tramite: {
+        type: DataTypes.DATEONLY
+    },
+    num_tramite: {
+        type: DataTypes.STRING
+    },
+    resolucion: {
+        type: DataTypes.STRING
+    },
+    objeto: {
+        type: DataTypes.TEXT
     }
 }, {
     tableName: 'concesiones_maritimas',

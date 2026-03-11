@@ -7,7 +7,7 @@ import NormaList from './pages/normas/NormaList';
 import PermisologiaHome from './pages/permiso/PermisologiaHome';
 import NotificationList from './pages/Notificaciones';
 import InfaList from './pages/infas/InfaList';
-import ProcedimientoList from './pages/procedimientos/ProcedimientoList';
+import ProcedimientoList from './pages/procedimientos/ProcedimientosList';
 import BitacoraList from './pages/BitacoraList';
 import AuditoriaList from './pages/auditoria/AuditoriaList';
 import ReporteList from './pages/reportes/ReporteList';

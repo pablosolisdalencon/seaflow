@@ -1,9 +1,11 @@
-// IEEE Trace: [REQ-INFA-01] | [US-301] | [US-302] | [US-303]
-const { Infa, Area } = require('../database/models');
+const { Infa, Area, EstacionInfa } = require('../database/models');
 
 exports.getAll = async (req, res) => {
     try {
-        const data = await Infa.findAll({ include: [Area], order: [['report_date', 'DESC']] });
+        const data = await Infa.findAll({ 
+            include: [Area, EstacionInfa], 
+            order: [['report_date', 'DESC']] 
+        });
         res.json(data);
     } catch (error) {
         res.status(500).json({ error: error.message });
@@ -23,7 +25,7 @@ exports.getByArea = async (req, res) => {
     try {
         const data = await Infa.findAll({
             where: { area_id: req.params.areaId },
-            include: [Area],
+            include: [Area, EstacionInfa],
             order: [['report_date', 'DESC']]
         });
         res.json(data);

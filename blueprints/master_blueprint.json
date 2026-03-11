@@ -1,0 +1,75 @@
+{
+  "project_name": "SGI Seaflow",
+  "architecture": {
+    "style": "Modular Monolith",
+    "backend": "Node.js (Express)",
+    "frontend": "React (Vite)",
+    "database": "MySQL (Sequelize)"
+  },
+  "design_system": {
+    "tokens": {
+      "primary": "#1a73e8",
+      "primary_hover": "#1765cc",
+      "bg_sidebar": "#3c4043",
+      "bg_content": "#ffffff",
+      "text_main": "#3c4043",
+      "text_muted": "#5f6368",
+      "border_light": "#e0e0e0"
+    },
+    "typography": {
+      "font_family": "Outfit, Inter, sans-serif"
+    }
+  },
+  "modules": {
+    "auth": {
+      "description": "User authentication and role-based access control",
+      "entities": ["User", "Role"],
+      "roles": ["Administrador", "Usuario interno", "Usuario básico"]
+    },
+    "normativo": {
+      "description": "Management of applicable regulations and articles",
+      "entities": ["Normativa", "Articulo", "BitacoraActualizacion"],
+      "features": ["Alerts for updates", "Ficha de Norma", "Gantt de cumplimiento (Realizado/Pendiente)", "Filtro por Áreas (Caucahue, Pullao, Chequian)"]
+    },
+    "certificaciones": {
+      "description": "Tracking of certifications (ASC, BAP, Orgánico, APL 1, APL 2)",
+      "entities": ["Certificacion", "EvidenciaCertificacion"],
+      "features": ["Status tracking", "Document management (Drag & Drop)", "Renewal alerts"]
+    },
+    "permisología": {
+      "description": "Management of land permits and maritime concessions",
+      "entities": ["PermisologiaTierra", "ConcesionAcuicultura", "ConcesionMaritima", "TramitePermisologia", "DocumentoPermiso"],
+      "features": ["Map integration", "Document expiration alerts", "History of procedures (Detalle de trámites)", "Download all assets"]
+    },
+    "procedimientos": {
+      "description": "Internal SGI procedures documentation",
+      "entities": ["Procedimiento", "RevisionProcedimiento"],
+      "features": ["PDF viewer", "Version control", "Revision status (Actualizado/Pendiente)"]
+    },
+    "capacitaciones": {
+      "description": "Training matrix and records",
+      "entities": ["Capacitacion", "RegistroCapacitacion"],
+      "features": ["Training matrix (User/Role view)", "Monthly attendance tracking", "Status indicators (Realizado/Pendiente)"]
+    },
+    "reportes": {
+      "description": "External reports (SINADER, SIDREP, Respel, etc.)",
+      "entities": ["ReporteExterno", "RegistroReporte"],
+      "features": ["Gantt view (Monthly status)", "Entity tracking (MMA, SMA, Energía, OIA)", "Automated notifications"]
+    },
+    "bitácora": {
+      "description": "Log of system changes and communication",
+      "entities": ["Carta", "ActividadBitacora"],
+      "features": ["Cartas management (Correlativo, Remitente, Destinatario)", "Actividades log (INFA, BAP, CCAA categories)", "History tracking", "Evidence upload"]
+    },
+    "infas": {
+      "description": "Environmental reports (INFA)",
+      "entities": ["Infa", "EstacionInfa"],
+      "features": ["Historical tracking", "Parameter analysis (PH, Redox, M.O.)", "Map area mapping", "Regulatory compliance checks"]
+    },
+    "auditorias": {
+      "description": "Internal and external audits management",
+      "entities": ["Auditoria", "Hallazgo", "Compromiso", "AuditChecklist"],
+      "features": ["Tabs: Interna, Certificaciones, Normativa", "Finding recording (NC/Cumple)", "Action plan tracking", "Evidence attachment"]
+    }
+  }
+}

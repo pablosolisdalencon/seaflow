@@ -1,62 +1,100 @@
-// IEEE Trace: [US-REP-01]
 import React from 'react';
-import { Download, Filter } from 'lucide-react';
+import { useReportes } from '../../hooks/useAuditorias';
+import { Calendar, CheckCircle, Clock, AlertCircle, Filter, Download } from 'lucide-react';
 
 const ReportesDashboard = () => {
-    const reports = [
-        { title: 'Cumplimiento Legal Gastos', value: '92%', color: '#1a73e8', sub: '+2.4% vs mes anterior' },
-        { title: 'Capacitaciones Realizadas', value: '78%', color: '#34a853', sub: 'Pendientes: 12 colaboradores' },
-        { title: 'Efectividad de Medidas', value: '85%', color: '#fbbc05', sub: 'Auditoría interna Feb' },
-        { title: 'Gestión de Residuos', value: '64%', color: '#ea4335', sub: 'Meta anual: 90%' },
-        { title: 'Permisos Vigentes', value: '100%', color: '#1a73e8', sub: 'Sin vencimientos próximos' },
-        { title: 'Resoluciones CC.MM.', value: '55%', color: '#042c4c', sub: '3 en trámite' }
-    ];
+    const { getAll } = useReportes();
 
-    const MiniChart = ({ color, value }) => {
-        const percent = parseInt(value);
-        return (
-            <div style={{ width: '100%', height: '8px', background: '#e8eaed', borderRadius: '4px', marginTop: '1rem', overflow: 'hidden' }}>
-                <div style={{ width: `${percent}%`, height: '100%', background: color }}></div>
-            </div>
-        );
+    if (getAll.isLoading) return <div style={{ padding: '2rem' }}>Cargando Panel de Reportes...</div>;
+
+    const months = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
+    const currentMonth = new Date().getMonth();
+
+    const getStatusColor = (status) => {
+        switch(status) {
+            case 'ENVIADO': return '#1e8e3e';
+            case 'PENDIENTE': return '#d93025';
+            case 'EN_PROCESO': return '#f9ab00';
+            default: return '#dadce0';
+        }
     };
 
     return (
         <div style={{ padding: '2rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem', alignItems: 'center' }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold' }}>Dashboard de Reportes Globales</h3>
-                <div style={{ display: 'flex', gap: '1rem' }}>
-                    <button style={{ border: '2px solid #000', padding: '0.4rem 1rem', borderRadius: '4px', background: '#fff', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold', fontSize: '0.85rem' }}>
-                        <Filter size={16} /> Filtrar
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+                <h1 style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: '#042c4c', margin: 0 }}>
+                    <Calendar color="#1a73e8" size={32} /> Seguimiento de Reportes Externos
+                </h1>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                    <button style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: '#fff', border: '1px solid #ddd', padding: '0.5rem 1rem', borderRadius: '8px', fontSize: '0.85rem', cursor: 'pointer' }}>
+                        <Filter size={16} /> Filtros
                     </button>
-                    <button style={{ background: '#042c4c', color: '#fff', border: '2px solid #000', padding: '0.4rem 1.5rem', borderRadius: '4px', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem' }}>
-                        <Download size={16} /> Exportar PDF
+                    <button style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: '#1a73e8', color: '#fff', border: 'none', padding: '0.5rem 1rem', borderRadius: '8px', fontSize: '0.85rem', cursor: 'pointer', fontWeight: '600' }}>
+                        <Download size={16} /> Exportar Planilla
                     </button>
                 </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
-                {reports.map((rep, idx) => (
-                    <div key={idx} style={{ border: '2px solid #000', padding: '1.5rem', borderRadius: '8px', background: '#fff', boxShadow: '4px 4px 0px rgba(0,0,0,0.05)' }}>
-                        <div style={{ fontSize: '0.8rem', color: '#5f6368', marginBottom: '0.5rem', fontWeight: 'bold', textTransform: 'uppercase' }}>{rep.title}</div>
-                        <div style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#3c4043', display: 'flex', alignItems: 'baseline', gap: '0.5rem' }}>
-                            {rep.value}
-                            <span style={{ fontSize: '0.75rem', fontWeight: 'normal', color: rep.sub.includes('+') ? '#34a853' : '#5f6368' }}>{rep.sub}</span>
-                        </div>
-                        <MiniChart color={rep.color} value={rep.value} />
+            {/* Gantt Chart Implementation */}
+            <div style={{ background: '#fff', borderRadius: '16px', border: '1px solid #e0e0e0', overflow: 'hidden', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
+                <div style={{ overflowX: 'auto' }}>
+                    <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '800px' }}>
+                        <thead style={{ background: '#f8f9fa' }}>
+                            <tr>
+                                <th style={{ padding: '1.25rem', textAlign: 'left', borderBottom: '1px solid #eee', width: '250px', background: '#f8f9fa', position: 'sticky', left: 0, zIndex: 10 }}>Sistema / Reporte</th>
+                                {months.map((m, idx) => (
+                                    <th key={m} style={{ 
+                                        padding: '1rem', textAlign: 'center', borderBottom: '1px solid #eee', fontSize: '0.75rem', color: '#5f6368',
+                                        background: idx === currentMonth ? '#e8f0fe' : 'transparent',
+                                        borderLeft: '1px solid #eee'
+                                    }}>
+                                        {m}
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {getAll.data?.map(report => (
+                                <tr key={report.id} style={{ borderBottom: '1px solid #f1f3f4' }}>
+                                    <td style={{ padding: '1.25rem', position: 'sticky', left: 0, background: '#fff', zIndex: 5, borderRight: '1px solid #f1f3f4' }}>
+                                        <div style={{ fontWeight: 'bold', fontSize: '0.9rem', color: '#202124' }}>{report.system}</div>
+                                        <div style={{ fontSize: '0.75rem', color: '#1a73e8' }}>{report.Area?.name || 'General'}</div>
+                                    </td>
+                                    {months.map((m, idx) => {
+                                        // Mock logic for Gantt display based on current data
+                                        const isReportMonth = report.period.includes(m) || (report.period === '2024-Q1' && idx < 3) || (report.period === 'ANUAL-2023' && idx === 0);
+                                        return (
+                                            <td key={idx} style={{ 
+                                                padding: '0.5rem', borderLeft: '1px solid #f1f3f4', textAlign: 'center',
+                                                background: idx === currentMonth ? '#f8fafd' : 'transparent'
+                                            }}>
+                                                {isReportMonth && (
+                                                    <div style={{ 
+                                                        height: '24px', borderRadius: '12px', background: getStatusColor(report.status),
+                                                        color: '#fff', fontSize: '0.65rem', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                        fontWeight: 'bold', margin: '0 auto', width: '90%', cursor: 'pointer'
+                                                    }} title={`${report.system} - ${report.status}`}>
+                                                        {report.status === 'ENVIADO' ? <CheckCircle size={12} /> : report.status === 'PENDIENTE' ? <Clock size={12} /> : <AlertCircle size={12} />}
+                                                    </div>
+                                                )}
+                                            </td>
+                                        );
+                                    })}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+                <div style={{ padding: '1.5rem', borderTop: '1px solid #f1f3f4', background: '#fcfcfc', display: 'flex', gap: '2rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: '#5f6368' }}>
+                        <div style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#1e8e3e' }}></div> Enviado / Cumplido
                     </div>
-                ))}
-            </div>
-
-            {/* Bottom Graphic Mockup */}
-            <div style={{ marginTop: '2rem', border: '2px solid #000', padding: '2rem', borderRadius: '8px', background: '#f8f9fa' }}>
-                <div style={{ fontSize: '0.9rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>Progresión Trimestral de Cumplimiento</div>
-                <div style={{ display: 'flex', alignItems: 'flex-end', gap: '2rem', height: '200px', paddingBottom: '2rem', borderBottom: '2px solid #000' }}>
-                    {[65, 80, 75, 92, 85, 98].map((h, i) => (
-                        <div key={i} style={{ flex: 1, background: '#1a73e8', height: `${h}%`, borderRadius: '4px 4px 0 0', position: 'relative' }}>
-                            <div style={{ position: 'absolute', bottom: '-25px', width: '100%', textAlign: 'center', fontSize: '0.7rem' }}>Mes {i + 1}</div>
-                        </div>
-                    ))}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: '#5f6368' }}>
+                        <div style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#d93025' }}></div> Pendiente / Vencido
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.8rem', color: '#5f6368' }}>
+                        <div style={{ width: '12px', height: '12px', borderRadius: '3px', background: '#f9ab00' }}></div> En Proceso / Rectificación
+                    </div>
                 </div>
             </div>
         </div>

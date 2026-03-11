@@ -28,6 +28,9 @@ const PermisologiaTierra = sequelize.define('PermisologiaTierra', {
     status: {
         type: DataTypes.ENUM('VIGENTE', 'VENCIDO', 'EN_TRAMITE'),
         defaultValue: 'VIGENTE'
+    },
+    detail: {
+        type: DataTypes.TEXT
     }
 }, {
     tableName: 'permisologia_tierra',

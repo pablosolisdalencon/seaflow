@@ -20,6 +20,11 @@ const Auditoria = sequelize.define('Auditoria', {
         type: DataTypes.ENUM('INTERNA', 'EXTERNA'),
         allowNull: false
     },
+    sub_type: {
+        type: DataTypes.ENUM('Interna', 'Certificaciones', 'Normativa'),
+        allowNull: false,
+        defaultValue: 'Interna'
+    },
     date: {
         type: DataTypes.DATEONLY,
         allowNull: false
